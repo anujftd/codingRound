@@ -1,0 +1,6 @@
+Commit #1
+Creating Main and Test sources
+Moving the Test Classes to test directory
+DriverConfig Class with a static method to set up chrome driver
+Setup driver path before initiating chrome driver
+Creating Wait class and static reusable method, and replaced the repeating code from test classes
