@@ -1,4 +1,7 @@
+package tests;
+
 import com.sun.javafx.PlatformUtil;
+import common.CommonTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -7,7 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import util.DriverConfig;
 
-public class HotelBookingTest {
+public class HotelBookingTest extends CommonTest {
 
     WebDriver driver;
 
@@ -25,8 +28,8 @@ public class HotelBookingTest {
 
     @Test
     public void shouldBeAbleToSearchForHotels() {
-        DriverConfig.setDriverPath();
-        driver = new ChromeDriver();
+
+        driver = super.getDriver();
 
         driver.get("https://www.cleartrip.com/");
         hotelLink.click();
@@ -36,7 +39,6 @@ public class HotelBookingTest {
         new Select(travellerSelection).selectByVisibleText("1 room, 2 adults");
         searchButton.click();
 
-        driver.quit();
 
     }
 

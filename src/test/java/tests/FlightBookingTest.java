@@ -1,4 +1,7 @@
+package tests;
+
 import com.sun.javafx.PlatformUtil;
+import common.CommonTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -11,15 +14,13 @@ import util.Wait;
 
 import java.util.List;
 
-public class FlightBookingTest {
+public class FlightBookingTest extends CommonTest {
 
     WebDriver driver;
-
-
+    
     @Test
     public void testThatResultsAppearForAOneWayJourney() {
-        DriverConfig.setDriverPath();
-        driver = new ChromeDriver();
+        driver = super.getDriver();
         driver.get("https://www.cleartrip.com/");
         Wait.waitFor(2000);
         driver.findElement(By.id("OneWay")).click();
@@ -52,17 +53,8 @@ public class FlightBookingTest {
         //verify that result appears for the provided journey search
         Assert.assertTrue(isElementPresent(By.className("searchSummary")));
 
-        //close the browser
-        driver.quit();
 
     }
-    
-    private boolean isElementPresent(By by) {
-        try {
-            driver.findElement(by);
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }
-    }
+
+
 }
