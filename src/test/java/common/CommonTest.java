@@ -1,12 +1,10 @@
 package common;
 
-import org.junit.After;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import util.DriverConfig;
 
@@ -19,6 +17,7 @@ public abstract class CommonTest {
         //initiate driver before each test
         DriverConfig.setDriverPath();
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
     }
 
 

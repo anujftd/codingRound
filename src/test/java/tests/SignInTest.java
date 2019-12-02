@@ -1,13 +1,11 @@
 package tests;
 
-import com.sun.javafx.PlatformUtil;
 import common.CommonTest;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import util.DriverConfig;
+import pages.HomePage;
+import pages.SignInPage;
 import util.Wait;
 
 public class SignInTest extends CommonTest{
@@ -17,16 +15,23 @@ public class SignInTest extends CommonTest{
     public void shouldThrowAnErrorIfSignInDetailsAreMissing() {
         WebDriver driver = super.getDriver();
 
-        driver.get("https://www.cleartrip.com/");
+        //Launch HomePage
+        HomePage homePage = new HomePage(driver);
+
+        //Launch SignIn Popup
+        homePage.launchYourTrips();
+        homePage.launchSignIn();
+
+        Wait.waitFor(5000);
+        //Tap On SignIn Button
+        SignInPage signInPage = new SignInPage(driver);
+
+        //Generate error message
+        signInPage.clickSignInButton();
+
         Wait.waitFor(2000);
-
-        driver.findElement(By.linkText("Your trips")).click();
-        driver.findElement(By.id("SignIn")).click();
-
-        driver.findElement(By.id("signInButton")).click();
-
-        String errors1 = driver.findElement(By.id("errors1")).getText();
-        Assert.assertTrue(errors1.contains("There were errors in your submission"));
+        //Assert the error
+        Assert.assertTrue(signInPage.getErrorText().contains("There were errors in your submission"));
 
     }
 

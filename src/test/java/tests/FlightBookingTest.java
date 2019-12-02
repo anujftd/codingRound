@@ -3,13 +3,10 @@ package tests;
 import com.sun.javafx.PlatformUtil;
 import common.CommonTest;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import util.DriverConfig;
 import util.Wait;
 
 import java.util.List;
@@ -17,7 +14,7 @@ import java.util.List;
 public class FlightBookingTest extends CommonTest {
 
     WebDriver driver;
-    
+
     @Test
     public void testThatResultsAppearForAOneWayJourney() {
         driver = super.getDriver();

@@ -9,3 +9,9 @@ Creating Wait class and static reusable method, and replaced the repeating code 
 Commit #2
 Maintaining Before and After Tests Common test class
 Moving the common code in the Common test class
+
+Commit #3
+Introducing POM approach and creating page classes
+fixing SignIn Test and resulting in a pass
+bouncing to v1.1.0
+Adding test block in build.gradle
