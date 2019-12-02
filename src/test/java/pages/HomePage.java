@@ -12,6 +12,7 @@ public class HomePage {
     By yourTrips = By.linkText("Your trips");
     By signIn = By.id("SignIn");
     By hotelsLinks = By.linkText("Hotels");
+    By flightsLinks = By.linkText("Flights");
 
     public HomePage( WebDriver driver) {
         this.driver = driver;
@@ -28,5 +29,7 @@ public class HomePage {
     }
 
     public void launchHotels(){ driver.findElement(hotelsLinks).click();}
+
+    public void launchFlights(){ driver.findElement(flightsLinks).click();}
 
 }
