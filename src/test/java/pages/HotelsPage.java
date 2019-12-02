@@ -21,7 +21,7 @@ public class HotelsPage {
     }
 
     public void travellerSelection(String travellerSelectionString){
-        new Select(driver.findElement(travellerSelection)).selectByVisibleText("1 room, 2 adults");
+        new Select(driver.findElement(travellerSelection)).selectByVisibleText(travellerSelectionString);
     }
 
     public void clickOnSearchButton(){

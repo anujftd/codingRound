@@ -9,6 +9,7 @@ public class HomePage {
     WebDriver driver;
 
     final String clearTripURL = "https://www.cleartrip.com/";
+
     By yourTrips = By.linkText("Your trips");
     By signIn = By.id("SignIn");
     By hotelsLinks = By.linkText("Hotels");

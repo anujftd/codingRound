@@ -1,5 +1,5 @@
 group 'com.testvagrant.codingRound'
-version '1.1.2'
+version '1.2.0'
 
 apply plugin: 'java'
 apply plugin: 'maven'
@@ -21,6 +21,7 @@ test {
     useTestNG() {
         // report generation delegated to TestNG library:
         useDefaultListeners = true
+        suites 'src/test/testng.xml'
     }
     //we want display the following test events
     testLogging {

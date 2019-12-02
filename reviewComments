@@ -23,3 +23,7 @@ Modifying HotelBookingTest
 Commit #5
 Bouncing to v1.1.2
 Modifying FlightBookingTest
+
+Commit #6
+Bouncing to v1.2.0
+Adding testng.xml for maintaing suites
