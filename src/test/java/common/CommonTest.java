@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import util.DriverConfig;
@@ -16,7 +17,9 @@ public abstract class CommonTest {
     public void beforeTest(){
         //initiate driver before each test
         DriverConfig.setDriverPath();
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-notifications");
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
     }
 

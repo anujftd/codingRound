@@ -15,3 +15,7 @@ Introducing POM approach and creating page classes
 fixing SignIn Test and resulting in a pass
 bouncing to v1.1.0
 Adding test block in build.gradle
+
+Commit #4
+bouncing to v1.1.1
+Modifying HotelBookingTest
